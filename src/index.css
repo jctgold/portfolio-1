@@ -72,11 +72,11 @@ h2 {
 }
 
 .default-card ul li {
-  @apply list-disc;
+  @apply list-disc text-sm md:text-base;
 }
 
 .mini-card {
-  @apply flex gap-3 px-3.5 py-3 items-center justify-start transition-all mix-blend-luminosity hover:mix-blend-normal hover:scale-105;
+  @apply flex gap-3 px-3.5 py-3 items-center justify-start transition-all mix-blend-luminosity hover:mix-blend-normal hover:scale-105 text-center;
 }
 
 .mini-card-responsive {
@@ -89,4 +89,8 @@ h2 {
 
 .swiper-wrapper {
   padding: 20px 0;
+}
+
+.swiper-slide {
+  height: auto !important;
 }

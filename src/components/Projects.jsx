@@ -26,7 +26,7 @@ const projects = [
     name: 'Personal Portfolio',
     url: 'https://juliaguinto.vercel.app',
     description:
-      'An e-commerce web application using Next.js, MongoDb, and Tailwind CSS.',
+      'A simple responsive personal weebsite using React and TailwindCss.',
     tech: ['React', 'TailwindCss'],
     tags: ['Responsive', 'UI/UX', 'Web Design'],
     image: portfolioImg,
@@ -43,16 +43,6 @@ const projects = [
   },
   {
     name: 'To Do App',
-    url: 'https://flixstats.vercel.app',
-    description:
-      "A web application that utilizes Spotify API to visualize a user's top tracks and artist.",
-    tech: ['Laravel', 'php'],
-    tags: ['UI/UX', 'Web Design'],
-    image: todoImg,
-  },
-  {
-    name: 'To Do App',
-    url: 'https://flixstats.vercel.app',
     description:
       "A web application that utilizes Spotify API to visualize a user's top tracks and artist.",
     tech: ['Laravel', 'php'],
@@ -102,7 +92,9 @@ export default function Projects() {
           >
             {projects.map((project) => (
               <SwiperSlide key={project}>
-                <ProjectItem item={project} />
+                <div className="h-full">
+                  <ProjectItem item={project} />
+                </div>
               </SwiperSlide>
             ))}
             <div className="flex w-full justify-between">

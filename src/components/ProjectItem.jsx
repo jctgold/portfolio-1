@@ -38,14 +38,16 @@ export default function ProjectItem({ item }) {
   }
 
   return (
-    <div className="rounded-md rounded-t-5xl items-stretch bg-white backdrop-blur-xl bg-opacity-50 shadow-lg overflow-hidden transition-all hover:shadow-xl hover:-translate-y-3">
+    <div className="h-full rounded-md rounded-t-5xl  bg-white backdrop-blur-xl bg-opacity-50 shadow-lg overflow-hidden transition-all hover:shadow-xl hover:-translate-y-3">
       <img src={item.image} className="aspect-video" alt={item.name} />
       <div className="flex flex-col p-3.5 gap-2">
         <div className="flex justify-between items-center">
           <h2 className="text-2xl m-0 p-0">{item.name}</h2>
-          <a href={item.url}>
-            <RiArrowRightUpLine size={32} />
-          </a>
+          {item.url && (
+            <a href={item.url}>
+              <RiArrowRightUpLine size={32} />
+            </a>
+          )}
         </div>
         <div className="flex flex-wrap gap-1.5">
           {item.tags.map((tag) => (
@@ -57,7 +59,7 @@ export default function ProjectItem({ item }) {
             </div>
           ))}
         </div>
-        <p className="text-sm">{item.description}</p>
+        <p className="text-sm text-justify">{item.description}</p>
         <div className="flex flex-col gap-1">
           <h4 className="text-sm uppercase font-semibold">Tech Used</h4>
           <div className="flex flex-wrap gap-1.5 ">
