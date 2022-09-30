@@ -80,7 +80,7 @@ h2 {
 }
 
 .mini-card-responsive {
-  @apply flex-col sm:flex-row p-2 md:px-3.5 md:py-3 gap-1 sm:gap-3 justify-center sm:justify-start;
+  @apply flex-col sm:flex-row p-1.5 md:px-3.5 md:py-3 gap-1 sm:gap-3 justify-center sm:justify-start;
 }
 
 .mini-card img {
