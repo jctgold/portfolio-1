@@ -50,7 +50,7 @@ export default function MiniCard({ title, altTitle, url, responsive }) {
         }`}
       >
         {getTechIcon(title)}
-        <p className="text-xs md:text-sm">{altTitle || title}</p>
+        <p className="text-xs sm:text-sm">{altTitle || title}</p>
       </div>
     </a>
   );
