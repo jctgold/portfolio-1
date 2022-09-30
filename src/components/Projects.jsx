@@ -64,16 +64,10 @@ const projects = [
 export default function Projects() {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
-  const [currentPosition, setCurrentPosition] = useState('start');
-
-  useEffect(() => {
-    console.log(currentPosition);
-  }, [currentPosition]);
 
   return (
     <Container id="projects">
       <div className="flex flex-col">
-        {/* <h2 className=" m-0 p-0">Projects</h2> */}
         <div className="w-full mix-blend-luminosity">
           <Swiper
             spaceBetween={20}
