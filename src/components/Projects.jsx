@@ -19,7 +19,7 @@ const projects = [
     name: 'Shop Rever',
     url: 'https://shoprever.vercel.app',
     description:
-      'An e-commerce web application using Next.js, MongoDb, and TailwindCSS.',
+      'An e-commerce web application using Next.js, MongoDb, and TailwindCss.',
     tech: ['Next.js', 'MongoDB', 'TailwindCss'],
     tags: ['In-Progress', 'Responsive', 'UI/UX', 'Web Design'],
     image: shopreverImg,

@@ -42,7 +42,7 @@ export default function ProjectItem({ item }) {
   return (
     <div className="h-full rounded-md rounded-t-5xl  bg-white backdrop-blur-xl bg-opacity-50 shadow-lg overflow-hidden transition-all hover:shadow-xl hover:-translate-y-3">
       <img src={item.image} className="aspect-video" alt={item.name} />
-      <div className="flex flex-col p-3.5 gap-2">
+      <div className="h-full flex flex-col p-3.5 gap-2 ">
         <div className="flex justify-between items-center">
           <h2 className="text-2xl m-0 p-0">{item.name}</h2>
           {item.url && (
