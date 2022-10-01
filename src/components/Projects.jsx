@@ -17,9 +17,9 @@ import ProjectItem from './ProjectItem';
 const projects = [
   {
     name: 'Shop Rever',
-    url: 'https://flixstats.vercel.app',
+    url: 'https://shoprever.vercel.app',
     description:
-      'An e-commerce web application using Next.js, MongoDb, and Tailwind CSS.',
+      'An e-commerce web application using Next.js, MongoDb, and TailwindCSS.',
     tech: ['Next.js', 'MongoDB', 'TailwindCss'],
     tags: ['In-Progress', 'Responsive', 'UI/UX', 'Web Design'],
     image: shopreverImg,
@@ -28,7 +28,7 @@ const projects = [
     name: 'Personal Portfolio',
     url: 'https://juliaguinto.vercel.app',
     description:
-      'A simple responsive personal weebsite using React and TailwindCss.',
+      'A simple responsive personal website using React and TailwindCss.',
     tech: ['React', 'TailwindCss'],
     tags: ['Responsive', 'UI/UX', 'Web Design'],
     image: portfolioImg,
@@ -36,7 +36,7 @@ const projects = [
 
   {
     name: 'FlixStats',
-    url: 'https://shoprever.vercel.app',
+    url: 'https://flixstats.vercel.app',
     description:
       "A web application that utilizes Spotify API to visualize a user's top tracks and artist.",
     tech: ['React', 'Javascript', 'Sass'],
@@ -47,7 +47,7 @@ const projects = [
     name: 'To Do App',
     description:
       "A web application that utilizes Spotify API to visualize a user's top tracks and artist.",
-    tech: ['Laravel', 'php'],
+    tech: ['Laravel', 'php', 'MySql'],
     tags: ['UI/UX', 'Web Design'],
     image: todoImg,
   },

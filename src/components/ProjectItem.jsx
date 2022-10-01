@@ -1,6 +1,7 @@
 import React from 'react';
 import Tooltip from '@mui/material/Tooltip';
 import { RiArrowRightUpLine } from 'react-icons/ri';
+import { GrMysql } from 'react-icons/gr';
 import {
   SiNextdotjs,
   SiMongodb,
@@ -31,6 +32,7 @@ export default function ProjectItem({ item }) {
       Firebase: <SiFirebase size={24} />,
       Git: <SiGit size={24} />,
       GitHub: <SiGithub size={24} />,
+      MySql: <GrMysql size={24} />,
       default: <MdDisabledByDefault size={24} />,
     };
 
@@ -60,7 +62,7 @@ export default function ProjectItem({ item }) {
           ))}
         </div>
         <p className="text-sm text-justify">{item.description}</p>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 ">
           <h4 className="text-sm uppercase font-semibold">Tech Used</h4>
           <div className="flex flex-wrap gap-1.5 ">
             {item.tech.map((techTool) => (
