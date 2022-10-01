@@ -17,6 +17,8 @@ import {
   SiLinkedin,
 } from 'react-icons/si';
 
+import { ImBehance2 } from 'react-icons/im';
+
 import { MdDisabledByDefault } from 'react-icons/md';
 
 function getTechIcon(title) {
@@ -35,6 +37,7 @@ function getTechIcon(title) {
     Kotlin: <SiKotlin size={24} />,
     Email: <MdEmail size={24} />,
     Linkedin: <SiLinkedin size={24} />,
+    Behance: <ImBehance2 size={24} />,
     default: <MdDisabledByDefault size={24} />,
   };
 
