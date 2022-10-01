@@ -9,7 +9,7 @@ const links = [
   },
   {
     title: 'Behance',
-    url: 'https://www.behance.net/juliaguinto1',
+    url: 'https://www.behance.net/julia-guinto',
   },
   {
     title: 'Linkedin',
