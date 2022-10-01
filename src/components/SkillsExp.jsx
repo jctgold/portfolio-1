@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import MiniCard from './MiniCard';
 import Container from './Section';
+import { motion, useInView } from 'framer-motion';
 
 const skills = [
   {
@@ -34,12 +35,23 @@ const skills = [
 ];
 
 export default function SkillsExp() {
+  const ref = useRef(false);
+  const isInView = useInView(ref, { once: false });
+
   return (
     <Container id="experience">
-      <div className="flex flex-col ">
-        <div className="flex flex-col mb-4">
+      <div className="flex flex-col">
+        <motion.div
+          ref={ref}
+          style={{
+            transform: isInView ? 'none' : 'translateY(100px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 1s cubic-bezier(1, 0.55, 0.55, 1)',
+          }}
+          className="flex flex-col mb-4 mix-blend-luminosity"
+        >
           <h2>Experience</h2>
-          <div className="default-card p-4 md:p-5 lg-4/5 mix-blend-luminosity">
+          <div className="default-card p-4 md:p-5 lg-4/5">
             <h3>Mobile Development Intern</h3>
             <p className="text-sm mb-4">LexMeet, Inc. | April - July 2022</p>
             <ul>
@@ -53,21 +65,30 @@ export default function SkillsExp() {
               </li>
             </ul>
           </div>
-        </div>
-        <div className="flex flex-col">
-          <h2>Skills</h2>
+        </motion.div>
+        <motion.div
+          className="flex flex-col"
+          style={{
+            transform: isInView ? 'none' : 'translateY(100px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 1s cubic-bezier(1, 0.55, 0.55, 1) 0.5s',
+          }}
+        >
+          <h2 className="mix-blend-luminosity">Skills</h2>
           <div className="auto-rows-fr grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-5 ">
-            {skills.map(({ title, altTitle, logo }) => (
-              <MiniCard
-                key={title}
-                altTitle={altTitle}
-                title={title}
-                logo={logo}
-                responsive={true}
-              />
+            {skills.map(({ title, altTitle, logo }, index) => (
+              <div>
+                <MiniCard
+                  key={title}
+                  altTitle={altTitle}
+                  title={title}
+                  logo={logo}
+                  responsive={true}
+                />
+              </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </Container>
   );

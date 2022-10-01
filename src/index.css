@@ -15,7 +15,13 @@ body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #bfbfd8 url('./images/gradient-bg.svg');
+  background-image: linear-gradient(
+      to bottom,
+      rgba(242, 211, 188, 1),
+      rgba(191, 191, 216, 1)
+    ),
+    url('./images/gradient-bg.svg');
+  background-blend-mode: multiply;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -27,11 +33,11 @@ body {
 }
 
 .nav {
-  @apply flex w-full justify-between fixed px-4 md:px-8 py-8 md:py-12 z-10;
+  @apply flex w-full justify-between fixed px-4 md:px-8 py-8 md:py-12 z-10 mix-blend-luminosity;
   background: linear-gradient(
-    rgba(191, 191, 216, 0.95),
-    rgba(191, 191, 216, 0.65),
-    rgba(191, 191, 216, 0)
+    rgba(242, 211, 188, 0.95),
+    rgba(242, 211, 188, 0.65),
+    rgba(242, 211, 188, 0)
   );
 }
 
@@ -76,11 +82,11 @@ h2 {
 }
 
 .mini-card {
-  @apply flex gap-3 px-3.5 py-3 items-center justify-start transition-all mix-blend-luminosity hover:mix-blend-normal hover:scale-105 text-center;
+  @apply flex gap-3 px-3.5 py-3 items-center justify-start transition-all mix-blend-luminosity hover:mix-blend-normal hover:scale-105;
 }
 
 .mini-card-responsive {
-  @apply flex-col sm:flex-row p-1.5 sm:px-3.5 sm:py-3 gap-1 sm:gap-3 justify-center sm:justify-start;
+  @apply flex-col sm:flex-row p-1.5 sm:px-3.5 sm:py-3 gap-1 sm:gap-3 justify-center sm:justify-start text-center sm:text-left;
 }
 
 .mini-card img {
@@ -93,4 +99,8 @@ h2 {
 
 .swiper-slide {
   height: auto !important;
+}
+
+.arrow-button {
+  @apply p-1 bg-white rounded-full m-0 justify-center align-middle shadow bg-opacity-50 backdrop-blur-lg;
 }

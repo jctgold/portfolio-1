@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { motion, useInView } from 'framer-motion';
 
+import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
 import 'swiper/css';
 // import 'swiper/css/navigation';
 import { FreeMode, Navigation } from 'swiper';
@@ -54,11 +56,21 @@ const projects = [
 export default function Projects() {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
+  const motionRef = useRef(false);
+  const isInView = useInView(motionRef, { once: false });
 
   return (
     <Container id="projects">
       <div className="flex flex-col">
-        <div className="w-full mix-blend-luminosity">
+        <motion.div
+          ref={motionRef}
+          style={{
+            transform: isInView ? 'none' : 'translateY(-100px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 1s cubic-bezier(1, 0.55, 0.55, 1)',
+          }}
+          className="w-full mix-blend-luminosity"
+        >
           <Swiper
             spaceBetween={20}
             slidesPerView={1}
@@ -90,29 +102,25 @@ export default function Projects() {
             }}
             modules={[FreeMode, Navigation]}
           >
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <SwiperSlide key={project}>
                 <div className="h-full">
                   <ProjectItem item={project} />
                 </div>
               </SwiperSlide>
             ))}
-            <div className="flex w-full justify-between">
-              <div
-                ref={navigationPrevRef}
-                className={`cursor-pointer text-2xl italic select-none`}
-              >
-                &lt;
+            <div className="flex w-full justify-end gap-4 cursor-pointer text-2xl  select-none">
+              <div ref={navigationPrevRef} className="arrow-button">
+                <MdNavigateBefore />
+                {/* &lt; */}
               </div>
-              <div
-                ref={navigationNextRef}
-                className={`cursor-pointer text-2xl italic select-none`}
-              >
-                &gt;
+              <div ref={navigationNextRef} className="arrow-button">
+                <MdNavigateNext />
+                {/* &gt; */}
               </div>
             </div>
           </Swiper>
-        </div>
+        </motion.div>
       </div>
     </Container>
   );

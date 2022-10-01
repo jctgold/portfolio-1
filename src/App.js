@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useInViewport } from 'react-in-viewport';
+import { motion } from 'framer-motion';
 
 import About from './components/About';
 import Contact from './components/Contact';
@@ -21,7 +22,12 @@ function App() {
 
   return (
     <div className="wrapper">
-      <nav className="nav">
+      <motion.nav
+        className="nav"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ ease: 'easeInOut', duration: 1, delay: 0 }}
+      >
         <ul>
           <li className={`nav-item ${inViewportAbout && 'nav-item-active'}`}>
             <a href="#about">About</a>
@@ -41,7 +47,7 @@ function App() {
         <p className="hidden sm:block px-4 text-primary-light">
           A Portfolio by Julia Guinto
         </p>
-      </nav>
+      </motion.nav>
       <div className="main-container">
         <div ref={about}>
           <About />
